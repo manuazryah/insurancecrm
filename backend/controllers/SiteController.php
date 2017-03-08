@@ -7,6 +7,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\AdminPosts;
+use common\models\AdminUsers;
 
 /**
  * Site controller
@@ -58,7 +60,19 @@ class SiteController extends Controller {
          * @return string
          */
         public function actionIndex() {
-                return $this->render('index');
+                if (!Yii::$app->user->isGuest) {
+                        return $this->redirect(array('site/home'));
+                }
+                $this->layout = 'login';
+                $model = new AdminUsers();
+                $model->scenario = 'login';
+                if ($model->load(Yii::$app->request->post()) && $model->login() && $this->setSession()) {
+                        return $this->redirect(array('site/home'));
+                } else {
+                        return $this->render('login', [
+                                    'model' => $model,
+                        ]);
+                }
         }
 
         /**
@@ -67,6 +81,7 @@ class SiteController extends Controller {
          * @return string
          */
         public function actionLogin() {
+                $this->layout = 'login';
                 if (!Yii::$app->user->isGuest) {
                         return $this->goHome();
                 }
