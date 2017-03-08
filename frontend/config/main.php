@@ -40,6 +40,16 @@ return [
             'rules' => [
             ],
         ],
+//        'assetManager' => [
+//            'bundles' => [
+//                'yii\web\JqueryAsset' => [
+//                    'js' => []
+//                ],
+//                'yii\bootstrap\BootstrapAsset' => [
+//                    'css' => [],
+//                ],
+//            ],
+//        ],
     ],
     'params' => $params,
 ];
