@@ -36,3 +36,5 @@ phpunit.phar
 
 /index.php
 /index-test.php
+
+/assets
