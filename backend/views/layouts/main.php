@@ -89,6 +89,24 @@ AppAsset::register($this);
                                                         </ul>
                                                 </li>
 
+                                                <li class="active opened active">
+                                                        <a href="">
+                                                                <i class="linecons-database"></i>
+                                                                <span class="title">Masters</span>
+                                                        </a>
+                                                        <ul>
+                                                                <li>
+                                                                        <?= Html::a('Country', ['/masters/country/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                                <li>
+                                                                        <?= Html::a('State', ['/masters/state/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                                <li>
+                                                                        <?= Html::a('City', ['/masters/city/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                        </ul>
+                                                </li>
+
                                         </ul>
 
                                 </div>
