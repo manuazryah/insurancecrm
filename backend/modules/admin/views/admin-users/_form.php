@@ -14,32 +14,46 @@ use yii\helpers\ArrayHelper;
 
         <?php $form = ActiveForm::begin(); ?>
 
-        <?php $posts = ArrayHelper::map(AdminPosts::findAll(['status' => 1]), 'id', 'post_name'); ?>
-        <?= $form->field($model, 'post_id')->dropDownList($posts, ['prompt' => '-Choose a Post-']) ?>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?php $posts = ArrayHelper::map(AdminPosts::findAll(['status' => 1]), 'id', 'post_name'); ?>
+                <?= $form->field($model, 'post_id')->dropDownList($posts, ['prompt' => '-Choose a Post-']) ?>
 
-        <?php if ($model->isNewRecord) { ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?php if ($model->isNewRecord) { ?>
 
-                <?= $form->field($model, 'user_name')->textInput(['maxlength' => true]) ?>
-        <?php } ?>
+                        <?= $form->field($model, 'user_name')->textInput(['maxlength' => true]) ?>
+                <?php } ?>
 
-        <?php if ($model->isNewRecord) { ?>
-                <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
-        <?php } ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?php if ($model->isNewRecord) { ?>
+                        <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+                <?php } ?>
 
-        <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'address')->textarea(['rows' => 6]) ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?= $form->field($model, 'address')->textarea(['rows' => 6]) ?>
 
-        <?= $form->field($model, 'status')->dropDownList(['1' => 'Enabled', '0' => 'Disabled']) ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?= $form->field($model, 'status')->dropDownList(['1' => 'Enabled', '0' => 'Disabled']) ?>
 
-        <div class="form-group"></div>
-
+        </div>
         <div class="form-group" style="float: right;">
-                <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'style' => 'margin-top: 18px;']) ?>
+                <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'style' => 'margin-top: 18px; height: 36px; width:100px;']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>

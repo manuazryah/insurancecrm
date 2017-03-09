@@ -9,69 +9,29 @@ body {
 
 a {
 }
-.form-inline .form-group{
-        width: 25%;
-        margin-left: 30px;
-        margin-bottom: 22px;
+
+.panel{
+        background-color: #ffffff;
 }
-.form-group label{
-        margin-left: 7px;
-        color: black;
+.panel .panel-heading>.panel-title {
+        float: left;
+        font-size: 17px;
+        text-transform: uppercase;
         font-weight: bold;
+        color: #b60d14;
 }
-.form-control{
-        width: 100% !important;
+.panel .panel-heading {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        background: 0 0;
+        font-size: 17px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid rgba(39, 41, 42, 0.46);
 }
-
-.error label{
-        color: rgb(209, 113, 72) !important;
-}
-.error input::-webkit-input-placeholder {
-        color: rgb(209, 113, 72);
-}
-.error input{
-        border: 1px solid rgb(209, 113, 72);
-}
-
 table{
         font-size: 14px;
         text-align: center;
-}
-.linker{
-        color: #979898;
-        padding-left: 0px;
-        padding-top: 0px;
-        margin-bottom: -7px;
-}
-.appoint{
-        background-color: #b3e8cf;
-        padding-bottom: 8px;
-        padding-top: 19px;
-        color: black;
-}
-.row.appoint div {
-        padding-left: 0px;
-}
-.appoint-title{
-        width: 95%;
-        text-align: center;
-}
-
-.has-error .help-block{
-        color: #da0000;
-}
-.nav.nav-tabs>li>a {
-        border: none;
-        background-color: #979898;
-        margin-right: 5px;
-        padding-left: 20px;
-        padding-right: 20px;
-        font-weight: bold;
-        cursor: pointer;
-}
-.nav.nav-tabs>li>a:hover {
-        border: none;
-        background-color: #e4e4e4;
 }
 table.table tr.filters{
         background-color: #eeeeee;
@@ -103,94 +63,48 @@ table.table tr.filters{
         border-top: 1px solid #b7b7b7;
         background-color: #eeeeee;
 }
-.filters .form-control{
-        border: 1px solid #afafaf;
-}
+
 .table>thead>tr>td, .table>tbody>tr>td, .table>tfood>tr>td, .table>thead>tr>th, .table>tbody>tr>th, .table>tfood>tr>th {
         padding: 6px 15px;
 }
 
 table.table tr td:last-child {
-        /*        display: inline-flex;
-                border: 0;*/
+        /*display: inline-flex;*/
+        /*border: 0;*/
 }
 table.table tr td:last-child a {
         padding: 4px;
 }
+
 .table>thead:first-child>tr:first-child>th{
-        width: 70px;
+        width: 109px;
+        white-space: nowrap;
 }
-.formm .form-control{
-        border: 1px solid #9a9a9a;
-        height: 37px;
-        color: black;
-        font-size: 15px;
-}
-.portcall {
-        color: #0049a0;
-        font-size: 16px;
-        margin-left: 31px;
-        margin-bottom: 12px;
-        cursor: pointer;
-        text-decoration: underline;
-}
-.colo.nav.nav-tabs>li>a{
-        /*background-color: #b9c7a7;*/
-}
-.colo.nav.nav-tabs>li.active>a {
-        background-color: #b9c7a7;
-}
-.estimat.nav.nav-tabs>li.active>a {
-        border: 0;
-        background-color: #e0e0e0;
-}
-.outterr{
-        width: 100%;
-        height: 100%;
-        padding: 10px;
-        background-color: #e0e0e0;
-}
-html .select2-drop .select2-results li.select2-result-selectable .select2-result-label {
-        color: #000000;
-        padding-left: 15px;
-}
-form .form-group .form-control{
-        color: black;
-        font-size: 15px;
-}
-.form-group label{
-        color: black;
+
+.filters .form-control{
+        border: 1px solid #afafaf;
 }
 .form-control {
         border: 1px solid #bdbcbc;
         color: black;
 }
-.panel{
-        background-color: #ffffff;
+.form-control{
+        width: 100% !important;
 }
-.table>thead:first-child>tr:first-child>th{
-        width: 70px;
-        white-space: nowrap;
+.form-inline .form-group{
+        width: 100%;
+        color:#000000;
+        height: 82px;
 }
-.detail-view th{
-        width: 25%;
+.form-group label{
+        color: black;
 }
-.grid-view td {
-        white-space: nowrap;
-}
-.panel .panel-heading>.panel-title {
-        float: left;
-        font-size: 17px;
-        text-transform: uppercase;
+.form-group label{
+        margin-left: 7px;
+        color: black;
         font-weight: bold;
-        color: #b60d14;
 }
-.panel .panel-heading {
-        position: relative;
-        padding: 0;
-        margin: 0;
-        background: 0 0;
-        font-size: 17px;
-        padding-bottom: 15px;
-        border-bottom: 3px solid rgba(39, 41, 42, 0.46);
+.col-md-4{
+        padding-left: 0;
 }
+

@@ -19,15 +19,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="panel-heading">
                                         <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
 
-                                        <!--                                        <div class="panel-options">
-                                                                                        <a href="#" data-toggle="panel">
-                                                                                                <span class="collapse-icon">&ndash;</span>
-                                                                                                <span class="expand-icon">+</span>
-                                                                                        </a>
-                                                                                        <a href="#" data-toggle="remove">
-                                                                                                &times;
-                                                                                        </a>
-                                                                                </div>-->
                                 </div>
                                 <div class="panel-body">
                                         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -49,8 +40,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             return $model->status == 1 ? 'Enabled' : 'disabled';
                                                     },
                                                 ],
-//                                                'CB',
-//                                                'UB',
+//            'CB',
+//            'UB',
                                                 // 'DOC',
                                                 // 'DOU',
                                                 ['class' => 'yii\grid\ActionColumn'],

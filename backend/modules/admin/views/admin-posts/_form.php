@@ -12,14 +12,16 @@ use yii\widgets\ActiveForm;
 
         <?php $form = ActiveForm::begin(); ?>
 
-        <?= $form->field($model, 'post_name')->textInput(['maxlength' => true]) ?>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?= $form->field($model, 'post_name')->textInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'status')->dropDownList(['1' => 'Enabled', '0' => 'Disabled']) ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?= $form->field($model, 'status')->dropDownList(['1' => 'Enabled', '0' => 'Disabled']) ?>
 
-        <div class="form-group"></div>
-
+        </div>
         <div class="form-group" style="float: right;">
-                <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'style' => 'margin-top: 18px;']) ?>
+                <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'style' => 'margin-top: 18px; height: 36px; width:100px;']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>

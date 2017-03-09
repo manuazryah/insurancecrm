@@ -65,6 +65,8 @@ class AdminUsers extends ActiveRecord implements IdentityInterface {
                         $user = $this->getUser();
                         if (!$user || !Yii::$app->security->validatePassword($this->password, $user->password)) {
                                 $this->addError($attribute, 'Incorrect username or password.');
+                        } else {
+                                Yii::$app->session['user_data'] = $user->attributes;
                         }
                 }
         }
