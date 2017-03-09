@@ -31,8 +31,9 @@ return [
             'csrfParam' => '_csrf-backend',
         ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\models\AdminUsers',
             'enableAutoLogin' => true,
+            'loginUrl' => ['site/index'],
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
         'session' => [

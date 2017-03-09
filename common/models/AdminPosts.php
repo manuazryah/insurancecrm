@@ -17,50 +17,47 @@ use Yii;
  *
  * @property AdminUsers[] $adminUsers
  */
-class AdminPosts extends \yii\db\ActiveRecord
-{
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return 'admin_posts';
-    }
+class AdminPosts extends \yii\db\ActiveRecord {
 
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
-        return [
-            [['post_name', 'CB', 'UB'], 'required'],
-            [['status', 'CB', 'UB'], 'integer'],
-            [['DOC', 'DOU'], 'safe'],
-            [['post_name'], 'string', 'max' => 100],
-        ];
-    }
+        /**
+         * @inheritdoc
+         */
+        public static function tableName() {
+                return 'admin_posts';
+        }
 
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'post_name' => 'Post Name',
-            'status' => 'Status',
-            'CB' => 'Cb',
-            'UB' => 'Ub',
-            'DOC' => 'Doc',
-            'DOU' => 'Dou',
-        ];
-    }
+        /**
+         * @inheritdoc
+         */
+        public function rules() {
+                return [
+                        [['post_name', 'CB', 'UB'], 'required'],
+                        [['status', 'CB', 'UB'], 'integer'],
+                        [['DOC', 'DOU'], 'safe'],
+                        [['post_name'], 'string', 'max' => 100],
+                ];
+        }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getAdminUsers()
-    {
-        return $this->hasMany(AdminUsers::className(), ['post_id' => 'id']);
-    }
+        /**
+         * @inheritdoc
+         */
+        public function attributeLabels() {
+                return [
+                    'id' => 'ID',
+                    'post_name' => 'Post Name',
+                    'status' => 'Status',
+                    'CB' => 'Created By',
+                    'UB' => 'Updated By',
+                    'DOC' => 'Date of Creation',
+                    'DOU' => 'Date of Updation',
+                ];
+        }
+
+        /**
+         * @return \yii\db\ActiveQuery
+         */
+        public function getAdminUsers() {
+                return $this->hasMany(AdminUsers::className(), ['post_id' => 'id']);
+        }
+
 }

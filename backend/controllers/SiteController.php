@@ -24,7 +24,7 @@ class SiteController extends Controller {
                         'class' => AccessControl::className(),
                         'rules' => [
                                 [
-                                'actions' => ['login', 'error', 'index'],
+                                'actions' => ['login', 'error', 'index', 'home'],
                                 'allow' => true,
                             ],
                                 [
@@ -73,6 +73,20 @@ class SiteController extends Controller {
                                     'model' => $model,
                         ]);
                 }
+        }
+
+        public function setSession() {
+                $post = AdminPosts::findOne(Yii::$app->user->identity->post_id);
+                Yii::$app->session['post'] = $post->attributes;
+
+                return true;
+        }
+
+        public function actionHome() {
+                if (Yii::$app->user->isGuest) {
+                        return $this->redirect(array('site/index'));
+                }
+                return $this->render('index');
         }
 
         /**
