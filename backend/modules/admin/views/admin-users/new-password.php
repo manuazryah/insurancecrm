@@ -21,12 +21,8 @@ $this->params['breadcrumbs'][] = 'Update';
 
                         </div>
                         <div class="panel-body">
-                                <div style="float:right;padding-top: 5px;">
-                                        <?php
-                                        echo Html::a('<i class="fa fa-pencil-square-o"></i><span> Manage Users</span>', ['index'], ['class' => 'btn btn-warning dropdown-toggle']);
-                                        ?>
+                                <?= Html::a('<i class="fa-th-list"></i><span> Manage Admin Users</span>', ['index'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
 
-                                </div>
                                 <div class="panel-body">
                                         <div class="employee-create">
                                                 <?php
