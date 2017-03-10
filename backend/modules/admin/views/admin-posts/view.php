@@ -51,6 +51,16 @@ $this->params['breadcrumbs'][] = $this->title;
                                                                     }, $model),
                                                         ],
                                                             [
+                                                            'label' => 'Admin',
+                                                            'format' => 'raw',
+                                                            'value' => $model->admin == 1 ? 'Yes' : 'No',
+                                                        ],
+                                                            [
+                                                            'label' => 'Masters',
+                                                            'format' => 'raw',
+                                                            'value' => $model->masters == 1 ? 'Yes' : 'No',
+                                                        ],
+                                                            [
                                                             'attribute' => 'CB',
                                                             'label' => 'Created By',
                                                             'value' => call_user_func(function($model) {

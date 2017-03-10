@@ -24,7 +24,7 @@ $("document").ready(function () {
                         url: homeUrl + 'ajax/state',
                         success: function (data) {
                                 if (data == 0) {
-                                        alert('Failed to Load data, please try again error:1002');
+                                        alert('Failed to Load data, please try again error:1001');
                                 } else {
                                         $(".state-change").html(data);
                                 }
@@ -52,7 +52,7 @@ $("document").ready(function () {
                                 url: homeUrl + 'ajax/city',
                                 success: function (data) {
                                         if (data == 0) {
-                                                alert('Failed to Load data, please try again error:1003');
+                                                alert('Failed to Load data, please try again error:1002');
                                         } else {
                                                 $(".city-change").html(data);
                                         }

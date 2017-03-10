@@ -19,11 +19,13 @@ use yii\helpers\ArrayHelper;
                 <?= $form->field($model, 'post_id')->dropDownList($posts, ['prompt' => '-Choose a Post-']) ?>
 
         </div>
-        <div class='col-md-4 col-sm-6 col-xs-12'>
+        <?php if ($model->isNewRecord) { ?>
+                <div class='col-md-4 col-sm-6 col-xs-12'>
 
-                <?= $form->field($model, 'user_name')->textInput(['maxlength' => true]) ?>
+                        <?= $form->field($model, 'user_name')->textInput(['maxlength' => true]) ?>
 
-        </div>
+                </div>
+        <?php } ?>
         <?php if ($model->isNewRecord) { ?>
                 <div class='col-md-4 col-sm-6 col-xs-12'>
 

@@ -13,13 +13,14 @@ use yii\filters\VerbFilter;
  * AdminUsersController implements the CRUD actions for AdminUsers model.
  */
 class AdminUsersController extends Controller {
-//        public function init() {
-//                if (Yii::$app->user->isGuest)
-//                        $this->redirect(['/site/index']);
-//
-//                if (Yii::$app->session['post']['admin'] != 1)
-//                        $this->redirect(['/site/home']);
-//        }
+
+        public function init() {
+                if (Yii::$app->user->isGuest)
+                        $this->redirect(['/site/index']);
+
+                if (Yii::$app->session['post']['admin'] != 1)
+                        $this->redirect(['/site/home']);
+        }
 
         /**
          * @inheritdoc
@@ -68,21 +69,17 @@ class AdminUsersController extends Controller {
         public function actionCreate() {
                 $model = new AdminUsers();
                 $model->setScenario('create');
-                if ($model->load(Yii::$app->request->post())) {
-
+                if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model)) {
                         if ($model->isNewRecord) {
                                 $model->password = Yii::$app->security->generatePasswordHash($model->password);
                         }
-                        $model->CB = 1;
-                        $model->UB = 1;
-                        $model->DOC = date('Y-m-d');
-                        $model->save();
-                        return $this->redirect(['view', 'id' => $model->id]);
-                } else {
-                        return $this->render('create', [
-                                    'model' => $model,
-                        ]);
+                        if ($model->validate() && $model->save()) {
+                                return $this->redirect(['view', 'id' => $model->id]);
+                        }
                 }
+                return $this->render('create', [
+                            'model' => $model,
+                ]);
         }
 
         /**
@@ -94,13 +91,12 @@ class AdminUsersController extends Controller {
         public function actionUpdate($id) {
                 $model = $this->findModel($id);
 
-                if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model) && $model->save()) {
+                if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model) && $model->validate() && $model->save()) {
                         return $this->redirect(['view', 'id' => $model->id]);
-                } else {
-                        return $this->render('update', [
-                                    'model' => $model,
-                        ]);
                 }
+                return $this->render('update', [
+                            'model' => $model,
+                ]);
         }
 
         /**

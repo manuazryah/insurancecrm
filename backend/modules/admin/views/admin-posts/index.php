@@ -33,6 +33,22 @@ $this->params['breadcrumbs'][] = $this->title;
 //                                                'id',
                                                 'post_name',
                                                     [
+                                                    'attribute' => 'admin',
+                                                    'filter' => [1 => 'Yes', 0 => 'No'],
+                                                    'value' => function ($model) {
+                                                            return $model->admin == 1 ? 'Yes' : 'No';
+                                                    },
+                                                    'filter' => [1 => 'Yes', 0 => 'No'],
+                                                ],
+                                                    [
+                                                    'attribute' => 'masters',
+                                                    'format' => 'raw',
+                                                    'filter' => [1 => 'Yes', 0 => 'No'],
+                                                    'value' => function ($model) {
+                                                            return $model->masters == 1 ? 'Yes' : 'No';
+                                                    },
+                                                ],
+                                                    [
                                                     'attribute' => 'status',
                                                     'format' => 'raw',
                                                     'filter' => [1 => 'Enabled', 0 => 'disabled'],

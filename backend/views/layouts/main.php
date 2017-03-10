@@ -40,7 +40,7 @@ AppAsset::register($this);
                         <!-- Add "fixed" class to make the sidebar fixed always to the browser viewport. -->
                         <!-- Adding class "toggle-others" will keep only one menu item open at a time. -->
                         <!-- Adding class "collapsed" collapse sidebar root elements and show only icons. -->
-                        <div class="sidebar-menu toggle-others fixed collapsed">
+                        <div class="sidebar-menu toggle-others fixed collapsed" id="side-menuss">
 
                                 <div class="sidebar-menu-inner">
 
@@ -643,6 +643,21 @@ AppAsset::register($this);
                                         });
                                 });
                         </script>
+
+                        <script type="text/javascript">
+                                jQuery(document).ready(function ($)
+                                {
+                                        if ($(window).width() < 900) {
+                                                $("#side-menuss").removeClass("collapsed");
+                                        } else {
+
+                                                $("#side-menuss").addClass('collapsed');
+                                        }
+                                        ;
+
+                                });
+                        </script>
+
 
 
 

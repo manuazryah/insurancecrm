@@ -12,6 +12,7 @@ a {
 
 .panel{
         background-color: #ffffff;
+        /*background-color: #cce6b4;*/
 }
 .panel .panel-heading>.panel-title {
         float: left;
@@ -35,14 +36,17 @@ table{
 }
 table.table tr.filters{
         background-color: #eeeeee;
+        /*background-color: #bfd2e8;*/
 }
 .table-striped>tbody>tr:nth-child(odd) {
         background-color: #ffffff;
+        /*background-color: #cbe6f1;*/
         color: black;
         font-size: 15px;
 }
 .table-striped>tbody>tr:nth-child(even) {
         background-color: #eeeeee;
+        /*background-color: #bfd2e8;*/
         color: black;
         font-size: 15px;
 }
@@ -62,6 +66,7 @@ table.table tr.filters{
 .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>th, .table>caption+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>td, .table>thead:first-child>tr:first-child>td {
         border-top: 1px solid #b7b7b7;
         background-color: #eeeeee;
+        /*background-color: #f1c755;*/
 }
 
 .table>thead>tr>td, .table>tbody>tr>td, .table>tfood>tr>td, .table>thead>tr>th, .table>tbody>tr>th, .table>tfood>tr>th {
@@ -107,4 +112,14 @@ table.table tr td:last-child a {
 .col-md-4{
         padding-left: 0;
 }
-
+.forgot-header{
+        margin-left: 30px;
+        margin-right: 30px;
+}
+.forgot-header hr {
+        margin-top: 0px;
+        margin-bottom: 0px;
+}
+.forgot-btn{
+        border: 1px solid #f5f5f5;
+}

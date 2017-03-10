@@ -13,6 +13,13 @@ $this->title = 'Login';
         <div class="row">
 
                 <div class="col-sm-6">
+                        <div class="forgot-header">
+                                <h4>Forgot Your Password ?</h4>
+                                <hr/>
+                                <h5>Let us help you</h5>
+                                <p>Type your username / email ID in the field below to receive your validation code by email:</p>
+                        </div>
+
 
                         <script type="text/javascript">
                                 jQuery(document).ready(function ($)
@@ -34,7 +41,7 @@ $this->title = 'Login';
                                             'id' => 'forgot-email',
                                             'method' => 'post',
                                             'options' => [
-                                                'class' => 'login-form fade-in-effect'
+                                                'class' => 'login-form fade-in-effect forgot-form'
                                             ]
                                         ]
                         );
@@ -51,17 +58,17 @@ $this->title = 'Login';
                         <?php endif; ?>
                         <label class="control-label" for="adminusers-user_name" style="    color: white;
                                font-size: 14px;
-                               font-weight: bold;">Email/Username
+                               font-weight: bold;">Email / Username
                         </label>
                         <div class="form-group">
-                                <label class="control-label" for="adminusers-user_name">User Name/ Email</label>
+                                <label class="control-label" for="adminusers-user_name">User Name / Email</label>
                                 <input type="text" id="adminusers-user_name" class="form-control" name="AdminUsers[user_name]" maxlength="30" aria-invalid="false">
 
                                 <div class="help-block"></div>
                         </div>
 
                         <div class="form-group" style="float: right;">
-                                <button type="submit" class="btn btn-primary" style="margin-top: 18px;">Submit</button>    </div>
+                                <button type="submit" class="btn btn-primary forgot-btn" style="margin-top: 18px;">Submit</button>    </div>
                                 <?php ActiveForm::end(); ?>
 
 
