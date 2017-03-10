@@ -18,58 +18,54 @@ use Yii;
  * @property City[] $cities
  * @property State[] $states
  */
-class Country extends \yii\db\ActiveRecord
-{
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return 'country';
-    }
+class Country extends \yii\db\ActiveRecord {
 
-    /**
-     * @inheritdoc
-     */
-    public function rules()
-    {
-        return [
-            [['country_name', 'CB', 'UB'], 'required'],
-            [['status', 'CB', 'UB'], 'integer'],
-            [['DOC', 'DOU'], 'safe'],
-            [['country_name'], 'string', 'max' => 100],
-        ];
-    }
+        /**
+         * @inheritdoc
+         */
+        public static function tableName() {
+                return 'country';
+        }
 
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'country_name' => 'Country Name',
-            'status' => 'Status',
-            'CB' => 'Cb',
-            'UB' => 'Ub',
-            'DOC' => 'Doc',
-            'DOU' => 'Dou',
-        ];
-    }
+        /**
+         * @inheritdoc
+         */
+        public function rules() {
+                return [
+                        [['country_name',], 'required'],
+                        [['status'], 'integer'],
+                        [['DOC', 'DOU', 'CB', 'UB'], 'safe'],
+                        [['country_name'], 'string', 'max' => 100],
+                ];
+        }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCities()
-    {
-        return $this->hasMany(City::className(), ['country_id' => 'id']);
-    }
+        /**
+         * @inheritdoc
+         */
+        public function attributeLabels() {
+                return [
+                    'id' => 'ID',
+                    'country_name' => 'Country Name',
+                    'status' => 'Status',
+                    'CB' => 'Created By',
+                    'UB' => 'Updated By',
+                    'DOC' => 'Date of Creation',
+                    'DOU' => 'Date of Updation',
+                ];
+        }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getStates()
-    {
-        return $this->hasMany(State::className(), ['country_id' => 'id']);
-    }
+        /**
+         * @return \yii\db\ActiveQuery
+         */
+        public function getCities() {
+                return $this->hasMany(City::className(), ['country_id' => 'id']);
+        }
+
+        /**
+         * @return \yii\db\ActiveQuery
+         */
+        public function getStates() {
+                return $this->hasMany(State::className(), ['country_id' => 'id']);
+        }
+
 }

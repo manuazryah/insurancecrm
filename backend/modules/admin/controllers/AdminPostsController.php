@@ -14,6 +14,14 @@ use yii\filters\VerbFilter;
  */
 class AdminPostsController extends Controller {
 
+        public function init() {
+                if (Yii::$app->user->isGuest)
+                        $this->redirect(['/site/index']);
+
+                if (Yii::$app->session['post']['admin'] != 1)
+                        $this->redirect(['/site/home']);
+        }
+
         /**
          * @inheritdoc
          */
@@ -61,7 +69,14 @@ class AdminPostsController extends Controller {
         public function actionCreate() {
                 $model = new AdminPosts();
 
-                if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model) && $model->save()) {
+                if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model)) {
+                        if ($model->validate() && $model->save()) {
+                                return $this->redirect(['view', 'id' => $model->id]);
+                        } else {
+                                return $this->render('update', [
+                                            'model' => $model,
+                                ]);
+                        }
                         return $this->redirect(['view', 'id' => $model->id]);
                 } else {
                         return $this->render('create', [
@@ -79,7 +94,7 @@ class AdminPostsController extends Controller {
         public function actionUpdate($id) {
                 $model = $this->findModel($id);
 
-                if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model) && $model->save()) {
+                if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model) && $model->validate() && $model->save()) {
                         return $this->redirect(['view', 'id' => $model->id]);
                 } else {
                         return $this->render('update', [

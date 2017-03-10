@@ -13,6 +13,13 @@ use yii\filters\VerbFilter;
  * AdminUsersController implements the CRUD actions for AdminUsers model.
  */
 class AdminUsersController extends Controller {
+//        public function init() {
+//                if (Yii::$app->user->isGuest)
+//                        $this->redirect(['/site/index']);
+//
+//                if (Yii::$app->session['post']['admin'] != 1)
+//                        $this->redirect(['/site/home']);
+//        }
 
         /**
          * @inheritdoc
@@ -60,11 +67,15 @@ class AdminUsersController extends Controller {
          */
         public function actionCreate() {
                 $model = new AdminUsers();
+                $model->setScenario('create');
+                if ($model->load(Yii::$app->request->post())) {
 
-                if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model)) {
-                        if ($model->isNewRecord):
+                        if ($model->isNewRecord) {
                                 $model->password = Yii::$app->security->generatePasswordHash($model->password);
-                        endif;
+                        }
+                        $model->CB = 1;
+                        $model->UB = 1;
+                        $model->DOC = date('Y-m-d');
                         $model->save();
                         return $this->redirect(['view', 'id' => $model->id]);
                 } else {

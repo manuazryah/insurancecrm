@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\City */
 
-$this->title = 'Update City: ' . $model->id;
+$this->title = 'Update City: ' . $model->city_name;
 $this->params['breadcrumbs'][] = ['label' => 'Cities', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
@@ -17,22 +17,15 @@ $this->params['breadcrumbs'][] = 'Update';
                         <div class="panel-heading">
                                 <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
 
-                                <div class="panel-options">
-                                        <a href="#" data-toggle="panel">
-                                                <span class="collapse-icon">&ndash;</span>
-                                                <span class="expand-icon">+</span>
-                                        </a>
-                                        <a href="#" data-toggle="remove">
-                                                &times;
-                                        </a>
-                                </div>
                         </div>
                         <div class="panel-body">
-                                <?=  Html::a('<i class="fa-th-list"></i><span> Manage City</span>', ['index'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
+                                <?= Html::a('<i class="fa-th-list"></i><span> Manage City</span>', ['index'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
                                 <div class="panel-body"><div class="city-create">
-                                                <?= $this->render('_form', [
-                                                'model' => $model,
-                                                ]) ?>
+                                                <?=
+                                                $this->render('_form', [
+                                                    'model' => $model,
+                                                ])
+                                                ?>
                                         </div>
                                 </div>
                         </div>

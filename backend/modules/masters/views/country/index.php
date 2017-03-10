@@ -19,38 +19,29 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="panel-heading">
                                         <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
 
-                                        <div class="panel-options">
-                                                <a href="#" data-toggle="panel">
-                                                        <span class="collapse-icon">&ndash;</span>
-                                                        <span class="expand-icon">+</span>
-                                                </a>
-                                                <a href="#" data-toggle="remove">
-                                                        &times;
-                                                </a>
-                                        </div>
                                 </div>
                                 <div class="panel-body">
-                                                                                            <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-                                        
-                                        <?=  Html::a('<i class="fa-th-list"></i><span> Create Country</span>', ['create'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
-                                                                                                                                                        <?= GridView::widget([
-                                                'dataProvider' => $dataProvider,
-                                                'filterModel' => $searchModel,
-        'columns' => [
-                                                ['class' => 'yii\grid\SerialColumn'],
+                                        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-                                                            'id',
-            'country_name',
-            'status',
-            'CB',
-            'UB',
-            // 'DOC',
-            // 'DOU',
-
+                                        <?= Html::a('<i class="fa-th-list"></i><span> Create Country</span>', ['create'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
+                                        <?=
+                                        GridView::widget([
+                                            'dataProvider' => $dataProvider,
+                                            'filterModel' => $searchModel,
+                                            'columns' => [
+                                                    ['class' => 'yii\grid\SerialColumn'],
+//                                                            'id',
+                                                'country_name',
+//                                                'status',
+//            'CB',
+//            'UB',
+                                                // 'DOC',
+                                                // 'DOU',
                                                 ['class' => 'yii\grid\ActionColumn'],
-                                                ],
-                                                ]); ?>
-                                                                                                                </div>
+                                            ],
+                                        ]);
+                                        ?>
+                                </div>
                         </div>
                 </div>
         </div>

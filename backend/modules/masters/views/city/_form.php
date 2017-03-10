@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use common\models\Country;
+use common\models\State;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\City */
@@ -12,26 +15,29 @@ use yii\widgets\ActiveForm;
 
         <?php $form = ActiveForm::begin(); ?>
 
-        <div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'country_id')->textInput() ?>
+        <?php
+        $country = ArrayHelper::map(Country::find()->where(['status' => 1])->all(), 'id', 'country_name');
+        $State = ArrayHelper::map(State::find()->where(['status' => 1])->all(), 'id', 'state_name');
+        ?>
 
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'state_id')->textInput() ?>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?= $form->field($model, 'country_id')->dropDownList($country, ['prompt' => '-Choose Country-', 'class' => 'form-control country-change']) ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?= $form->field($model, 'state_id')->dropDownList($State, ['prompt' => '-Choose State-', 'class' => 'form-control state-change no-city']) ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
+                <?= $form->field($model, 'city_name')->textInput(['maxlength' => true]) ?>
 
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'city_name')->textInput(['maxlength' => true]) ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
 
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'status')->textInput() ?>
+                <div class="form-group" style="float: right;">
+                        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'style' => 'margin-top: 18px; height: 36px; width:100px;']) ?>
+                </div>
 
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'CB')->textInput() ?>
-
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'UB')->textInput() ?>
-
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'DOC')->textInput() ?>
-
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'DOU')->textInput() ?>
-
-</div>        <div class="form-group" style="float: right;">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'style' => 'margin-top: 18px; height: 36px; width:100px;']) ?>
         </div>
 
-<?php ActiveForm::end(); ?>
+        <?php ActiveForm::end(); ?>
 
 </div>

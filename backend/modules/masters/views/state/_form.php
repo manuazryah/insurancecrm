@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use common\models\Country;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\State */
@@ -12,24 +14,29 @@ use yii\widgets\ActiveForm;
 
         <?php $form = ActiveForm::begin(); ?>
 
-        <div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'country_id')->textInput() ?>
+        <?php
+        $country = ArrayHelper::map(Country::find()->where(['status' => 1])->all(), 'id', 'country_name');
+        ?>
 
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'state_name')->textInput(['maxlength' => true]) ?>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
 
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'status')->textInput() ?>
+                <?= $form->field($model, 'country_id')->dropDownList($country, ['prompt' => '-Choose Country-']) ?>
 
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'CB')->textInput() ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
 
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'UB')->textInput() ?>
+                <?= $form->field($model, 'state_name')->textInput(['maxlength' => true]) ?>
 
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'DOC')->textInput() ?>
+        </div>
+        <div class='col-md-4 col-sm-6 col-xs-12'>
 
-</div><div class='col-md-4 col-sm-6 col-xs-12'>    <?= $form->field($model, 'DOU')->textInput() ?>
+                <div class="form-group" style="float: right;">
+                        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'style' => 'margin-top: 18px; height: 36px; width:100px;']) ?>
+                </div>
 
-</div>        <div class="form-group" style="float: right;">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'style' => 'margin-top: 18px; height: 36px; width:100px;']) ?>
         </div>
 
-<?php ActiveForm::end(); ?>
+
+        <?php ActiveForm::end(); ?>
 
 </div>

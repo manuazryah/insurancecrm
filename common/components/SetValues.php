@@ -20,6 +20,7 @@ use yii\base\Component;
 class SetValues extends Component {
 
         public function Attributes($model) {
+
                 if (isset($model) && !Yii::$app->user->isGuest) {
 
                         if ($model->isNewRecord) {
@@ -27,7 +28,6 @@ class SetValues extends Component {
                                 $model->DOC = date('Y-m-d');
                         }
                         $model->UB = Yii::$app->user->identity->id;
-
 
                         return TRUE;
                 } else {
@@ -71,17 +71,17 @@ class SetValues extends Component {
                 $s = explode('.', $grandtotal);
                 $amount = $s[0];
                 $decimal = $s[1];
-               if($amount != ''){
-                 $total = $english_format_number = number_format($amount);
-                if ($decimal != 0) {
-                        $grandtotal = $total . '.' . $decimal;
+                if ($amount != '') {
+                        $total = $english_format_number = number_format($amount);
+                        if ($decimal != 0) {
+                                $grandtotal = $total . '.' . $decimal;
+                        } else {
+                                $grandtotal = $total . '.00';
+                        }
+                        return $grandtotal;
                 } else {
-                        $grandtotal = $total. '.00';
+                        return;
                 }
-                return $grandtotal;
-               }else{
-                       return;
-               }
         }
 
 }

@@ -25,6 +25,10 @@ AppAsset::register($this);
                 <meta name="author" content="" />
                 <title>Insurance CRM</title>
                 <script src="<?= Yii::$app->homeUrl; ?>/js/jquery-1.11.1.min.js"></script>
+                <script type="text/javascript">
+                        var homeUrl = '<?= Yii::$app->homeUrl; ?>';
+                        var basePath = '<?= Yii::$app->basePath; ?>';
+                </script>
                 <?= Html::csrfMetaTags() ?>
                 <?php $this->head() ?>
         </head>
@@ -386,13 +390,13 @@ AppAsset::register($this);
 
                                                         <ul class="dropdown-menu user-profile-menu list-unstyled">
                                                                 <li>
-                                                                        <a href="<?= Yii::$app->homeUrl; ?>admin/admin-users/change-password?id=<?= Yii::$app->session['user_data']['id'] ?>">
+                                                                        <a href="<?= Yii::$app->homeUrl; ?>admin/admin-users/change-password?id=<?= Yii::$app->user->identity->id ?>">
                                                                                 <i class="fa-wrench"></i>
                                                                                 Change Password
                                                                         </a>
                                                                 </li>
                                                                 <li>
-                                                                        <a href="<?= Yii::$app->homeUrl; ?>admin/admin-users/update?id=<?= Yii::$app->session['user_data']['id'] ?>">
+                                                                        <a href="<?= Yii::$app->homeUrl; ?>admin/admin-users/update?id=<?= Yii::$app->user->identity->id ?>">
                                                                                 <i class="fa-user"></i>
                                                                                 Profile
                                                                         </a>
@@ -589,6 +593,13 @@ AppAsset::register($this);
                 <div class="footer-sticked-chat"><!-- Start: Footer Sticked Chat -->
 
                         <script type="text/javascript">
+                                function showLoader() {
+                                        $('.page-loading-overlay').removeClass('loaded');
+                                }
+                                function hideLoader() {
+                                        $('.page-loading-overlay').addClass('loaded');
+                                }
+
                                 function toggleSampleChatWindow()
                                 {
                                         var $chat_win = jQuery("#sample-chat-window");
