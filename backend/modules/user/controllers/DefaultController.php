@@ -1,11 +1,11 @@
 <?php
 
-namespace backend\modules\policy\controllers;
+namespace backend\modules\user\controllers;
 
 use yii\web\Controller;
 
 /**
- * Default controller for the `policy` module
+ * Default controller for the `user` module
  */
 class DefaultController extends Controller
 {

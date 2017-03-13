@@ -135,20 +135,12 @@ AppAsset::register($this);
                                                                 <li>
                                                                         <?= Html::a('Company Contacts', ['/company/company-contacts/index'], ['class' => 'title']) ?>
                                                                 </li>
-                                                        </ul>
-                                                </li>
-
-                                                <li class="active opened active">
-                                                        <a href="">
-                                                                <i class="fa fa-cogs"></i>
-                                                                <span class="title">Policy Details</span>
-                                                        </a>
-                                                        <ul>
                                                                 <li>
-                                                                        <?= Html::a('Plolicy Details', ['/policy/policy-details/index'], ['class' => 'title']) ?>
+                                                                        <?= Html::a('Plolicy Details', ['/company/policy-details/index'], ['class' => 'title']) ?>
                                                                 </li>
                                                         </ul>
                                                 </li>
+
 
                                         </ul>
 

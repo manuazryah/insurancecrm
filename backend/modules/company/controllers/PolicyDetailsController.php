@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\modules\policy\controllers;
+namespace backend\modules\company\controllers;
 
 use Yii;
 use common\models\PolicyDetails;

@@ -34,6 +34,9 @@ return [
         'policy' => [
             'class' => 'backend\modules\policy\Module',
         ],
+        'user' => [
+            'class' => 'backend\modules\user\Module',
+        ],
     ],
     'components' => [
         'request' => [
