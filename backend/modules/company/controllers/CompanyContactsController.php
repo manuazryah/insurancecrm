@@ -88,13 +88,12 @@ class CompanyContactsController extends Controller {
         public function actionUpdate($id) {
                 $model = $this->findModel($id);
 
-                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model) && $model->validate() && $model->save(false)) {
                         return $this->redirect(['view', 'id' => $model->id]);
-                } else {
-                        return $this->render('update', [
-                                    'model' => $model,
-                        ]);
                 }
+                return $this->render('update', [
+                            'model' => $model,
+                ]);
         }
 
         /**

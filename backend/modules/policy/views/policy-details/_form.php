@@ -24,6 +24,12 @@ use common\models\CompanyDetails;
         $policy_type = ArrayHelper::map(PolicyType::find()->where(['status' => 1])->all(), 'id', 'policy_name');
         $cover = ArrayHelper::map(Cover::find()->where(['status' => 1])->all(), 'id', 'cover');
         $application_status = ArrayHelper::map(ApplicationStatus::find()->where(['status' => 1])->all(), 'id', 'application_status');
+        if ($model->isNewRecord) {
+                $model->cover_start_date = date('d-m-Y');
+                $model->cover_end_date = date('d-m-Y');
+                $model->review_date = date('d-m-Y');
+                $model->renewal_date = date('d-m-Y');
+        }
         ?>
 
         <div class='col-md-4 col-sm-6 col-xs-12'>
