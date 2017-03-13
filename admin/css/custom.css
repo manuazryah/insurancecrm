@@ -123,3 +123,12 @@ table.table tr td:last-child a {
 .forgot-btn{
         border: 1px solid #f5f5f5;
 }
+.nav.nav-tabs>li.active>a {
+        background-color: #979898 !important;
+}
+.nav.nav-tabs>li>a {
+        background-color: #cad0d0 !important;
+}
+.nav.nav-tabs.nav-tabs-justified, .nav-tabs-justified .nav.nav-tabs {
+        background-color: #979c9c !important;
+}

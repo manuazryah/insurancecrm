@@ -28,6 +28,9 @@ return [
         'masters' => [
             'class' => 'backend\modules\masters\Module',
         ],
+        'company' => [
+            'class' => 'backend\modules\company\Module',
+        ],
     ],
     'components' => [
         'request' => [
@@ -59,6 +62,13 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'admin-posts/<action>' => 'admin/admin-posts/<action>',
+                'admin-users/<action>' => 'admin/admin-users/<action>',
+                'country/<action>' => 'masters/country/<action>',
+                'state/<action>' => 'masters/state/<action>',
+                'city/<action>' => 'masters/city/<action>',
+                'company-details/<action>' => 'company/company-details/<action>',
+                'company-contacts/<action>' => 'company/company-contacts/<action>',
             ],
         ],
         'assetManager' => [

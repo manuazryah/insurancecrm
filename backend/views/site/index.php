@@ -15,26 +15,26 @@
                 // Notifications
                 window.clearTimeout(sample_notification);
 
-                var notification = setTimeout(function ()
-                {
-                        var opts = {
-                                "closeButton": true,
-                                "debug": false,
-                                "positionClass": "toast-top-right toast-default",
-                                "toastClass": "black",
-                                "onclick": null,
-                                "showDuration": "100",
-                                "hideDuration": "1000",
-                                "timeOut": "5000",
-                                "extendedTimeOut": "1000",
-                                "showEasing": "swing",
-                                "hideEasing": "linear",
-                                "showMethod": "fadeIn",
-                                "hideMethod": "fadeOut"
-                        };
-
-                        toastr.info("Enjoy the varieties of layouts, UI features and flexibility of clean coding.", "Welcome to Xenon Admin Theme", opts);
-                }, 3800);
+//                var notification = setTimeout(function ()
+//                {
+//                        var opts = {
+//                                "closeButton": true,
+//                                "debug": false,
+//                                "positionClass": "toast-top-right toast-default",
+//                                "toastClass": "black",
+//                                "onclick": null,
+//                                "showDuration": "100",
+//                                "hideDuration": "1000",
+//                                "timeOut": "5000",
+//                                "extendedTimeOut": "1000",
+//                                "showEasing": "swing",
+//                                "hideEasing": "linear",
+//                                "showMethod": "fadeIn",
+//                                "hideMethod": "fadeOut"
+//                        };
+//
+//                        toastr.info("Enjoy the varieties of layouts, UI features and flexibility of clean coding.", "Welcome to Xenon Admin Theme", opts);
+//                }, 3800);
 
                 if (!$.isFunction($.fn.dxChart))
                         return;

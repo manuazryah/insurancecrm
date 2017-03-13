@@ -111,6 +111,21 @@ AppAsset::register($this);
                                                         </ul>
                                                 </li>
 
+                                                <li class="active opened active">
+                                                        <a href="">
+                                                                <i class="fa fa-building-o"></i>
+                                                                <span class="title">Company</span>
+                                                        </a>
+                                                        <ul>
+                                                                <li>
+                                                                        <?= Html::a('Company Details', ['/company/company-details/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                                <li>
+                                                                        <?= Html::a('Company Contacts', ['/company/company-contacts/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                        </ul>
+                                                </li>
+
                                         </ul>
 
                                 </div>
@@ -378,6 +393,10 @@ AppAsset::register($this);
 
                                         <!-- Right links for user info navbar -->
                                         <ul class="user-info-menu right-links list-inline list-unstyled">
+
+                                                <li>
+                                                        <a href="<?= Yii::$app->homeUrl; ?>site/home"><i class="fa-home"></i>Home</a>
+                                                </li>
 
                                                 <li class="dropdown user-profile">
                                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
