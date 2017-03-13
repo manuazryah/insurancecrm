@@ -31,6 +31,9 @@ return [
         'company' => [
             'class' => 'backend\modules\company\Module',
         ],
+        'policy' => [
+            'class' => 'backend\modules\policy\Module',
+        ],
     ],
     'components' => [
         'request' => [
@@ -66,9 +69,13 @@ return [
                 'admin-users/<action>' => 'admin/admin-users/<action>',
                 'country/<action>' => 'masters/country/<action>',
                 'state/<action>' => 'masters/state/<action>',
-                'city/<action>' => 'masters/city/<action>',
+                'product/<action>' => 'masters/product/<action>',
+                'policy-type/<action>' => 'masters/policy-type/<action>',
+                'cover/<action>' => 'masters/cover/<action>',
+                'application-status/<action>' => 'masters/application-status/<action>',
                 'company-details/<action>' => 'company/company-details/<action>',
                 'company-contacts/<action>' => 'company/company-contacts/<action>',
+                'policy-details/<action>' => 'policy/policy-details/<action>',
             ],
         ],
         'assetManager' => [

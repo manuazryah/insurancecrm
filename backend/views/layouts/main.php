@@ -108,6 +108,18 @@ AppAsset::register($this);
                                                                 <li>
                                                                         <?= Html::a('City', ['/masters/city/index'], ['class' => 'title']) ?>
                                                                 </li>
+                                                                <li>
+                                                                        <?= Html::a('Product', ['/masters/product/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                                <li>
+                                                                        <?= Html::a('Policy Type', ['/masters/policy-type/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                                <li>
+                                                                        <?= Html::a('Cover', ['/masters/cover/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                                <li>
+                                                                        <?= Html::a('Application Status', ['/masters/application-status/index'], ['class' => 'title']) ?>
+                                                                </li>
                                                         </ul>
                                                 </li>
 
@@ -122,6 +134,18 @@ AppAsset::register($this);
                                                                 </li>
                                                                 <li>
                                                                         <?= Html::a('Company Contacts', ['/company/company-contacts/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                        </ul>
+                                                </li>
+
+                                                <li class="active opened active">
+                                                        <a href="">
+                                                                <i class="fa fa-cogs"></i>
+                                                                <span class="title">Policy Details</span>
+                                                        </a>
+                                                        <ul>
+                                                                <li>
+                                                                        <?= Html::a('Plolicy Details', ['/policy/policy-details/index'], ['class' => 'title']) ?>
                                                                 </li>
                                                         </ul>
                                                 </li>
