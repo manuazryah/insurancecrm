@@ -101,28 +101,28 @@ use yii\jui\DatePicker;
         </div>
 
         <div id="p_scents">
-
+                <span>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                        <label class="control-label">Name</label>
+                                </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group ">
+                                        <label class="control-label" for="">Gender</label>
+                                </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                        <label class="control-label" >Date of Birth</label>
+                                </div>
+                        </div>
+                </span>
                 <?php
                 if (!$model_children->isNewRecord) {
                         ?>
                         <input type="hidden" value="<?php echo count($model_children); ?>" id="child-count"/>
-                        <span>
-                                <div class="col-md-4 col-sm-6 col-xs-12">
-                                        <div class="form-group">
-                                                <label class="control-label">Name</label>
-                                        </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12">
-                                        <div class="form-group ">
-                                                <label class="control-label" for="">Gender</label>
-                                        </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6 col-xs-12">
-                                        <div class="form-group">
-                                                <label class="control-label" >Date of Birth</label>
-                                        </div>
-                                </div>
-                        </span>
+
                         <?php
                         foreach ($model_children as $data) {
                                 ?>

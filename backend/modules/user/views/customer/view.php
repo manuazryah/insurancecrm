@@ -67,7 +67,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         'address:ntext',
                                                         'contact_number',
                                                         'email:email',
-                                                        'existing_sick_benifits',
                                                             [
                                                             'label' => 'Existing Sick Benifits',
                                                             'format' => 'raw',
@@ -82,34 +81,26 @@ $this->params['breadcrumbs'][] = $this->title;
                                                         'spouse_dob',
                                                         'spouse_occupation',
                                                         'no_of_children',
-                                                            [
-                                                            'attribute' => 'status',
-                                                            'value' => call_user_func(function($model) {
-                                                                            if ($model->status == 1) {
-                                                                                    return 'ENABLED';
-                                                                            } else {
-                                                                                    return 'DISABLED';
-                                                                            }
-                                                                    }, $model),
-                                                        ],
-                                                            [
-                                                            'attribute' => 'CB',
-                                                            'label' => 'Created By',
-                                                            'value' => call_user_func(function($model) {
+                                                    ],
+                                                ])
+                                                ?>
+                                        </div>
+                                        <div class="customer-view">
+                                                <p>
+                                                <h4 style="color: #b60d14;text-decoration: underline;font-weight: bold;">Childrens Details</h4>
+                                                </p>
 
-                                                                            return AdminUsers::findOne($model->CB)->name;
-                                                                    }, $model),
-                                                        ],
+                                                <?=
+                                                DetailView::widget([
+                                                    'model' => $model_children,
+                                                    'attributes' => [
+                                                        'name',
                                                             [
-                                                            'attribute' => 'UB',
-                                                            'label' => 'Updated By',
-                                                            'value' => call_user_func(function($model) {
-
-                                                                            return AdminUsers::findOne($model->UB)->name;
-                                                                    }, $model),
+                                                            'label' => 'Gender',
+                                                            'format' => 'raw',
+                                                            'value' => $model->gender == 1 ? 'Male' : 'Female',
                                                         ],
-                                                        'DOC',
-                                                        'DOU',
+                                                        'dob',
                                                     ],
                                                 ])
                                                 ?>

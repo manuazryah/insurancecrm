@@ -49,8 +49,10 @@ class CustomerController extends Controller {
          * @return mixed
          */
         public function actionView($id) {
+                $model_children = Children::find()->where(['customer_id' => $id])->one();
                 return $this->render('view', [
                             'model' => $this->findModel($id),
+                            'model_children' => $model_children,
                 ]);
         }
 
