@@ -95,6 +95,36 @@ AppAsset::register($this);
 
                                                 <li class="active opened active">
                                                         <a href="">
+                                                                <i class="fa fa-user"></i>
+                                                                <span class="title">User</span>
+                                                        </a>
+                                                        <ul>
+                                                                <li>
+                                                                        <?= Html::a('User Details', ['/user/customer/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                        </ul>
+                                                </li>
+
+                                                <li class="active opened active">
+                                                        <a href="">
+                                                                <i class="fa fa-building-o"></i>
+                                                                <span class="title">Company</span>
+                                                        </a>
+                                                        <ul>
+                                                                <li>
+                                                                        <?= Html::a('Company Details', ['/company/company-details/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                                <li>
+                                                                        <?= Html::a('Company Contacts', ['/company/company-contacts/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                                <li>
+                                                                        <?= Html::a('Plolicy Details', ['/company/policy-details/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                        </ul>
+                                                </li>
+
+                                                <li class="active opened active">
+                                                        <a href="">
                                                                 <i class="linecons-database"></i>
                                                                 <span class="title">Masters</span>
                                                         </a>
@@ -122,25 +152,6 @@ AppAsset::register($this);
                                                                 </li>
                                                         </ul>
                                                 </li>
-
-                                                <li class="active opened active">
-                                                        <a href="">
-                                                                <i class="fa fa-building-o"></i>
-                                                                <span class="title">Company</span>
-                                                        </a>
-                                                        <ul>
-                                                                <li>
-                                                                        <?= Html::a('Company Details', ['/company/company-details/index'], ['class' => 'title']) ?>
-                                                                </li>
-                                                                <li>
-                                                                        <?= Html::a('Company Contacts', ['/company/company-contacts/index'], ['class' => 'title']) ?>
-                                                                </li>
-                                                                <li>
-                                                                        <?= Html::a('Plolicy Details', ['/company/policy-details/index'], ['class' => 'title']) ?>
-                                                                </li>
-                                                        </ul>
-                                                </li>
-
 
                                         </ul>
 

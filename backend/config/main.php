@@ -31,9 +31,6 @@ return [
         'company' => [
             'class' => 'backend\modules\company\Module',
         ],
-        'policy' => [
-            'class' => 'backend\modules\policy\Module',
-        ],
         'user' => [
             'class' => 'backend\modules\user\Module',
         ],
@@ -78,7 +75,7 @@ return [
                 'application-status/<action>' => 'masters/application-status/<action>',
                 'company-details/<action>' => 'company/company-details/<action>',
                 'company-contacts/<action>' => 'company/company-contacts/<action>',
-                'policy-details/<action>' => 'policy/policy-details/<action>',
+                'policy-details/<action>' => 'company/policy-details/<action>',
             ],
         ],
         'assetManager' => [
